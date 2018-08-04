@@ -26,8 +26,8 @@ public class PessoaService {
 		pessoaSalva.setAtivo(ativo);
 		pessoaRepository.save(pessoaSalva);
 	}
-	
-	private Pessoa buscarPessoaPeloCodigo(Long codigo) {
+	//metodo passado para public a partir de LancamentoService
+	public Pessoa buscarPessoaPeloCodigo(Long codigo) {
 		Pessoa pessoaSalva = pessoaRepository.findOne(codigo);
 		if (pessoaSalva == null) {
 			throw new EmptyResultDataAccessException(1);
